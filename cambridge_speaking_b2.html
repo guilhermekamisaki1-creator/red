@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambridge FCE — Speaking Masterclass B2+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ROOT TOKENS
+   ============================================================ */
+:root {
+  --bg:      #faf6ef;
+  --bg2:     #f0e9da;
+  --bg3:     #e8dece;
+  --ink:     #1a1a1a;
+  --red:     #c8342e;
+  --blue:    #1d4e89;
+  --gold:    #c9900a;
+  --green:   #2a6048;
+  --purple:  #5c3491;
+  --teal:    #126370;
+  --muted:   #6d6455;
+  --white:   #fff;
+  --navy:    #0d1a2e;
+
+  --ff-head: 'Playfair Display', Georgia, serif;
+  --ff-body: 'DM Sans', system-ui, sans-serif;
+  --ff-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --r:       3px;
+  --shadow:  0 2px 12px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul, ol { padding-left: 1.4em; }
+li { margin: .35em 0; }
+strong { font-weight: 600; }
+
+/* ============================================================
+   STICKY NAV
+   ============================================================ */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 3px solid var(--red);
+  box-shadow: var(--shadow-lg);
+}
+.topnav::-webkit-scrollbar { display: none; }
+.topnav-brand {
+  font-family: var(--ff-mono);
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: .75rem 1.2rem;
+  border-right: 1px solid rgba(255,255,255,.12);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.topnav a {
+  color: rgba(255,255,255,.7);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  padding: .75rem .9rem;
+  white-space: nowrap;
+  transition: color .15s, background .15s;
+  text-decoration: none;
+}
+.topnav a:hover { color: #fff; background: rgba(255,255,255,.08); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  background: var(--navy);
+  color: #fff;
+  padding: 4rem 1.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(200,52,46,.06) 40px,
+    rgba(200,52,46,.06) 41px
+  );
+}
+.hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+.hero-kicker {
+  font-family: var(--ff-mono);
+  font-size: .7rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .8rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.hero-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--gold);
+}
+.hero h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  margin-bottom: .6rem;
+}
+.hero h1 em { font-style: italic; color: var(--red); }
+.hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.65);
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.badge {
+  font-family: var(--ff-mono);
+  font-size: .65rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .35rem .8rem;
+  border-radius: var(--r);
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.8);
+}
+.badge.red { background: rgba(200,52,46,.25); border-color: var(--red); color: #ff8880; }
+
+/* ============================================================
+   EXAM PARTS OVERVIEW
+   ============================================================ */
+.parts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.part-card {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  padding: 1.25rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform .15s;
+}
+.part-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.part-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+}
+.part-card.p1::before { background: var(--red); }
+.part-card.p2::before { background: var(--blue); }
+.part-card.p3::before { background: var(--green); }
+.part-card.p4::before { background: var(--purple); }
+.part-num {
+  font-family: var(--ff-mono);
+  font-size: .65rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: .3rem;
+}
+.p1 .part-num { color: var(--red); }
+.p2 .part-num { color: var(--blue); }
+.p3 .part-num { color: var(--green); }
+.p4 .part-num { color: var(--purple); }
+.part-card h3 {
+  font-family: var(--ff-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: .4rem;
+}
+.part-time {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: .5rem;
+}
+.part-card p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+
+/* ============================================================
+   MAIN CONTAINER / SECTIONS
+   ============================================================ */
+.container { max-width: 880px; margin: 0 auto; padding: 0 1.25rem; }
+section.main-sec {
+  padding: 4rem 0 2rem;
+  border-top: 1px solid var(--bg3);
+}
+.sec-label {
+  font-family: var(--ff-mono);
+  font-size: .65rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: .4rem;
+}
+h2.sec-title {
+  font-family: var(--ff-head);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  margin-bottom: .6rem;
+  padding-bottom: .6rem;
+  border-bottom: 3px solid var(--ink);
+}
+h2.sec-title em { font-style: italic; color: var(--red); }
+.sec-intro {
+  font-family: var(--ff-head);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+h3.sub-title {
+  font-family: var(--ff-head);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 2rem 0 .8rem;
+}
+
+/* ============================================================
+   BOXES
+   ============================================================ */
+.box {
+  border-radius: var(--r);
+  padding: 1.1rem 1.25rem;
+  margin: 1.2rem 0;
+  border-left: 4px solid;
+}
+.box-title {
+  font-weight: 700;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.box.tip   { background: #fff8e6; border-color: var(--gold); }
+.box.warn  { background: #fde8e7; border-color: var(--red); }
+.box.good  { background: #e6f3ec; border-color: var(--green); }
+.box.info  { background: #e8eef8; border-color: var(--blue); }
+.box.mind  { background: #f0e8f8; border-color: var(--purple); }
+
+/* ============================================================
+   PHRASE CARDS
+   ============================================================ */
+.phrases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: .75rem;
+  margin: 1rem 0;
+}
+.phrase-card {
+  background: var(--white);
+  border: 1.5px solid var(--bg3);
+  border-radius: var(--r);
+  padding: .9rem 1rem;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+  position: relative;
+}
+.phrase-card:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow);
+}
+.phrase-card .eng {
+  font-family: var(--ff-head);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: .2rem;
+}
+.phrase-card .pt {
+  font-size: .8rem;
+  color: var(--muted);
+}
+.phrase-card .copy-btn {
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  font-size: .65rem;
+  font-family: var(--ff-mono);
+  color: var(--muted);
+  background: var(--bg2);
+  border: 1px solid var(--bg3);
+  border-radius: 2px;
+  padding: .15rem .4rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s;
+}
+.phrase-card:hover .copy-btn { opacity: 1; }
+.phrase-card.copied { border-color: var(--green); }
+.phrase-card.copied .copy-btn { opacity: 1; background: var(--green); color: #fff; border-color: var(--green); }
+
+/* ============================================================
+   TABS
+   ============================================================ */
+.tabs-container { margin: 1.5rem 0; }
+.tabs-nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--ink);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  font-family: var(--ff-mono);
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .65rem 1.1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--muted);
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color .15s;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active {
+  color: var(--red);
+  border-bottom-color: var(--red);
+  font-weight: 600;
+}
+.tab-panel { display: none; padding: 1.5rem 0; }
+.tab-panel.active { display: block; }
+
+/* ============================================================
+   VOCAB TAGS
+   ============================================================ */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: .8rem 0;
+}
+.tag {
+  font-family: var(--ff-mono);
+  font-size: .75rem;
+  background: var(--bg2);
+  border: 1px solid var(--bg3);
+  padding: .3rem .7rem;
+  border-radius: 20px;
+  color: var(--ink);
+  cursor: default;
+  transition: background .12s;
+}
+.tag:hover { background: var(--bg3); }
+.tag.red   { background: rgba(200,52,46,.08); border-color: rgba(200,52,46,.3); color: var(--red); }
+.tag.blue  { background: rgba(29,78,137,.08); border-color: rgba(29,78,137,.3); color: var(--blue); }
+.tag.green { background: rgba(42,96,72,.08);  border-color: rgba(42,96,72,.3);  color: var(--green); }
+
+/* ============================================================
+   EXAMPLE QUOTES
+   ============================================================ */
+.eg-block {
+  border-left: 3px solid var(--red);
+  background: var(--white);
+  padding: .7rem 1rem;
+  margin: .7rem 0;
+  border-radius: 0 var(--r) var(--r) 0;
+}
+.eg-block .eng {
+  font-family: var(--ff-head);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.eg-block .pt {
+  font-size: .82rem;
+  color: var(--muted);
+  margin-top: .2rem;
+}
+.eg-block.good { border-color: var(--green); }
+.eg-block.bad  { border-color: var(--red); opacity: .65; }
+.eg-block.bad .eng { text-decoration: line-through; }
+.eg-block .label {
+  font-family: var(--ff-mono);
+  font-size: .65rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .25rem;
+}
+.eg-block.good .label { color: var(--green); }
+.eg-block.bad  .label { color: var(--red); }
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: .88rem;
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.tbl th {
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--ff-mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .7rem 1rem;
+  text-align: left;
+}
+.tbl td {
+  padding: .65rem 1rem;
+  border-bottom: 1px solid var(--bg3);
+  vertical-align: top;
+}
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr:nth-child(even) td { background: var(--bg); }
+.tbl td strong { color: var(--red); }
+.tbl td em { color: var(--blue); font-style: normal; font-weight: 500; }
+
+/* ============================================================
+   VS COMPARISON
+   ============================================================ */
+.vs-box {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.vs-box .col { padding: 1rem; }
+.vs-box .col-a { background: #fff8e6; }
+.vs-box .col-b { background: #e8eef8; }
+.vs-box .divider {
+  background: var(--ink);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .8rem;
+  font-family: var(--ff-head);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+.vs-box h5 {
+  font-family: var(--ff-mono);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+.vs-box .col-a h5 { color: var(--gold); }
+.vs-box .col-b h5 { color: var(--blue); }
+@media(max-width: 600px){
+  .vs-box { grid-template-columns: 1fr; }
+  .vs-box .divider { padding: .5rem; }
+}
+
+/* ============================================================
+   MODEL ANSWER
+   ============================================================ */
+.model-answer {
+  background: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: var(--r);
+  margin: 1.2rem 0;
+  overflow: hidden;
+}
+.model-answer-head {
+  background: var(--blue);
+  color: var(--white);
+  padding: .65rem 1rem;
+  font-family: var(--ff-mono);
+  font-size: .68rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.model-answer-body {
+  padding: 1.1rem 1.2rem;
+}
+.model-answer-body p {
+  font-family: var(--ff-head);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 .8rem;
+}
+.model-answer-body p:last-child { margin: 0; }
+.highlight-str {
+  background: rgba(29,78,137,.12);
+  padding: .05em .25em;
+  border-radius: 2px;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--blue);
+}
+.highlight-voc {
+  background: rgba(200,52,46,.1);
+  padding: .05em .25em;
+  border-radius: 2px;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--red);
+}
+.model-annotation {
+  font-family: var(--ff-body);
+  font-style: normal;
+  font-size: .82rem;
+  background: var(--bg);
+  border-top: 1px solid var(--bg3);
+  padding: .8rem 1.2rem;
+}
+.model-annotation span { display: inline-flex; align-items: center; gap: .3rem; margin-right: 1rem; }
+
+/* ============================================================
+   SIMULADO — INTERACTIVE
+   ============================================================ */
+.simulado-card {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  margin: 1.2rem 0;
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.simulado-card.active { box-shadow: 0 0 0 3px var(--red); }
+.sim-head {
+  background: var(--ink);
+  color: var(--white);
+  padding: .75rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.sim-part-label {
+  font-family: var(--ff-mono);
+  font-size: .68rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.sim-timer {
+  font-family: var(--ff-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  min-width: 50px;
+  text-align: right;
+}
+.sim-timer.urgent { color: #ff6b6b; animation: pulse .5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+.sim-body { padding: 1.25rem; }
+.sim-question {
+  font-family: var(--ff-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  line-height: 1.4;
+}
+.sim-instruction {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.sim-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  font-family: var(--ff-mono);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .55rem 1.1rem;
+  border-radius: var(--r);
+  border: 2px solid;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .12s, color .12s;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--red); color: #fff; border-color: var(--red); }
+.btn-primary:hover { background: #a42722; border-color: #a42722; }
+.btn-secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-secondary:hover { background: var(--ink); color: #fff; }
+.btn-green { background: var(--green); color: #fff; border-color: var(--green); }
+.btn-green:hover { background: #1e4433; }
+.btn-sm { padding: .35rem .8rem; font-size: .65rem; }
+
+.sim-answer {
+  display: none;
+  border-top: 1px solid var(--bg3);
+  margin-top: .8rem;
+  padding-top: .8rem;
+}
+.sim-answer.visible { display: block; }
+.sim-answer-label {
+  font-family: var(--ff-mono);
+  font-size: .65rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: .5rem;
+}
+.sim-answer-text {
+  font-family: var(--ff-head);
+  font-style: italic;
+  font-size: .95rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.sim-tips {
+  margin-top: .8rem;
+  font-size: .82rem;
+  background: var(--bg);
+  border-radius: var(--r);
+  padding: .7rem .9rem;
+  color: var(--muted);
+}
+.sim-progress-bar {
+  height: 4px;
+  background: var(--bg3);
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.sim-progress-bar .fill {
+  height: 100%;
+  background: var(--red);
+  border-radius: 2px;
+  transition: width .3s;
+}
+
+/* ============================================================
+   CHECKLIST / ERRORS
+   ============================================================ */
+.checklist { list-style: none; padding: 0; margin: 1rem 0; }
+.checklist li {
+  padding: .65rem .9rem .65rem 2.5rem;
+  position: relative;
+  background: var(--white);
+  border: 1.5px solid var(--bg3);
+  border-radius: var(--r);
+  margin-bottom: .5rem;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: border-color .12s, background .12s;
+}
+.checklist li::before {
+  content: '✗';
+  position: absolute;
+  left: .75rem;
+  top: .65rem;
+  font-weight: 700;
+  color: var(--red);
+  font-size: .9rem;
+}
+.checklist li.done { background: #e6f3ec; border-color: var(--green); }
+.checklist li.done::before { content: '✓'; color: var(--green); }
+.checklist li b { color: var(--ink); }
+.checklist li .sub { display: block; font-size: .78rem; color: var(--muted); margin-top: .1rem; }
+
+/* ============================================================
+   ERROR LIST (RED CARD STYLE)
+   ============================================================ */
+.error-list { list-style: none; padding: 0; }
+.error-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: .8rem;
+}
+.err-num {
+  font-family: var(--ff-mono);
+  font-size: .7rem;
+  font-weight: 600;
+  background: var(--red);
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: .15rem;
+}
+.err-body { font-size: .9rem; }
+.err-body strong { display: block; margin-bottom: .15rem; }
+.err-body .err-eg-bad  { color: #a00; font-style: italic; font-size: .85rem; }
+.err-body .err-eg-good { color: var(--green); font-style: italic; font-size: .85rem; }
+.err-body .arr { color: var(--muted); margin: 0 .3rem; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,.5);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: var(--ff-mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: 4rem;
+}
+.site-footer strong { color: rgba(255,255,255,.8); }
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+.accordion { margin: 1rem 0; }
+.acc-item {
+  border: 1.5px solid var(--bg3);
+  border-radius: var(--r);
+  margin-bottom: .5rem;
+  overflow: hidden;
+  background: var(--white);
+}
+.acc-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1rem 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--ff-body);
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--ink);
+  gap: .5rem;
+}
+.acc-trigger:hover { background: var(--bg); }
+.acc-trigger .icon {
+  font-size: 1.2rem;
+  transition: transform .2s;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.acc-trigger.open .icon { transform: rotate(45deg); }
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+.acc-body-inner { padding: .5rem 1.1rem 1.2rem; font-size: .9rem; }
+
+/* ============================================================
+   SCORE BADGE
+   ============================================================ */
+.score-ring {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid;
+  font-family: var(--ff-mono);
+  font-weight: 700;
+}
+.criterion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: .75rem;
+  margin: 1rem 0;
+}
+.criterion-card {
+  background: var(--white);
+  border: 1.5px solid var(--bg3);
+  border-radius: var(--r);
+  padding: .9rem 1rem;
+  text-align: center;
+}
+.criterion-card .pct {
+  font-family: var(--ff-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: block;
+}
+.criterion-card .name {
+  font-size: .78rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.c1 { border-top: 3px solid var(--red); }   .c1 .pct { color: var(--red); }
+.c2 { border-top: 3px solid var(--blue); }  .c2 .pct { color: var(--blue); }
+.c3 { border-top: 3px solid var(--green); } .c3 .pct { color: var(--green); }
+.c4 { border-top: 3px solid var(--gold); }  .c4 .pct { color: var(--gold); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width: 640px){
+  .parts-grid { grid-template-columns: 1fr 1fr; }
+  .phrases-grid { grid-template-columns: 1fr; }
+  .criterion-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width: 400px){
+  .parts-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   MISC UTILITIES
+   ============================================================ */
+.mt1 { margin-top: 1rem; }
+.mt2 { margin-top: 2rem; }
+.mb1 { margin-bottom: 1rem; }
+.text-muted { color: var(--muted); font-size: .88rem; }
+.mono { font-family: var(--ff-mono); }
+.red { color: var(--red); }
+.green { color: var(--green); }
+.blue { color: var(--blue); }
+.pill {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: .62rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .15rem .5rem;
+  border-radius: 20px;
+  margin-left: .3rem;
+}
+.pill.red   { background: rgba(200,52,46,.1); color: var(--red); border: 1px solid rgba(200,52,46,.3); }
+.pill.blue  { background: rgba(29,78,137,.1); color: var(--blue); border: 1px solid rgba(29,78,137,.3); }
+.pill.green { background: rgba(42,96,72,.1);  color: var(--green); border: 1px solid rgba(42,96,72,.3); }
+.pill.gold  { background: rgba(201,144,10,.1);color: var(--gold); border: 1px solid rgba(201,144,10,.3); }
+</style>
+</head>
+<body>
+
+<!-- ===================== STICKY NAV ===================== -->
+<nav class="topnav">
+  <div class="topnav-brand">FCE Speaking B2+</div>
+  <a href="#overview">📋 Visão Geral</a>
+  <a href="#strategies">🎯 Estratégias</a>
+  <a href="#vocabulary">📚 Vocabulário</a>
+  <a href="#grammar">⚙️ Gramática</a>
+  <a href="#models">💬 Respostas Modelo</a>
+  <a href="#simulado">🎙️ Simulado</a>
+  <a href="#errors">⚠️ Erros Comuns</a>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Cambridge English · B2 First</div>
+    <h1>Speaking<br><em>Masterclass</em></h1>
+    <p class="hero-sub">Tudo o que você precisa saber para amanhã — vocabulário, estratégias, respostas modelo e simulado interativo. Focado 100% em <strong style="color:#fff">oral</strong>.</p>
+    <div class="hero-badges">
+      <span class="badge red">⚡ Prova Amanhã</span>
+      <span class="badge">4 Partes do Speaking</span>
+      <span class="badge">Modelos B2+</span>
+      <span class="badge">Simulado Interativo</span>
+      <span class="badge">Baseado no seu material FCE</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 0: QUICK SUMMARY ===================== -->
+<div class="container">
+<section class="main-sec" id="overview" style="padding-top:2.5rem">
+  <div class="sec-label">Resumo Rápido</div>
+  <h2 class="sec-title">O que mais <em>cai</em> no Speaking</h2>
+  <p class="sec-intro">Antes de qualquer coisa: entenda a prova. O Speaking do FCE tem 4 partes, dura ~14 min e é avaliado por 4 critérios. Aqui está o mapa.</p>
+
+  <div class="criterion-grid">
+    <div class="criterion-card c1"><span class="pct">25%</span><span class="name">Gramática &amp; Vocabulário</span></div>
+    <div class="criterion-card c2"><span class="pct">25%</span><span class="name">Discurso (coerência &amp; coesão)</span></div>
+    <div class="criterion-card c3"><span class="pct">25%</span><span class="name">Pronúncia</span></div>
+    <div class="criterion-card c4"><span class="pct">25%</span><span class="name">Interação Comunicativa</span></div>
+  </div>
+
+  <div class="box info" style="margin-bottom:1.5rem">
+    <div class="box-title">ℹ️ O que isso significa na prática</div>
+    <p>Gramática perfeita = 25% da nota. Você pode errar gramática e ainda passar — mas <strong>não consegue passar sem falar de forma coerente</strong>. Conectivos, desenvolvimento de ideias e interação com o parceiro são tão importantes quanto estrutura.</p>
+  </div>
+
+  <div class="parts-grid">
+    <div class="part-card p1">
+      <div class="part-num">Parte 1</div>
+      <h3>Interview</h3>
+      <div class="part-time">⏱ ~2 minutos</div>
+      <p>Perguntas sobre você: rotina, gostos, experiências, planos. Falar com o examiner, não com o parceiro.</p>
+    </div>
+    <div class="part-card p2">
+      <div class="part-num">Parte 2</div>
+      <h3>Long Turn</h3>
+      <div class="part-time">⏱ ~4 minutos (1 min cada)</div>
+      <p>Você recebe 2 fotos, fala por ~1 min comparando-as e responde a uma pergunta. Depois o parceiro faz o mesmo e você comenta brevemente.</p>
+    </div>
+    <div class="part-card p3">
+      <div class="part-num">Parte 3</div>
+      <h3>Collaborative Task</h3>
+      <div class="part-time">⏱ ~3 minutos</div>
+      <p>Você e seu parceiro discutem opções juntos, negociam e chegam a uma decisão. Interação é essencial aqui.</p>
+    </div>
+    <div class="part-card p4">
+      <div class="part-num">Parte 4</div>
+      <h3>Discussion</h3>
+      <div class="part-time">⏱ ~5 minutos</div>
+      <p>O examiner faz perguntas mais profundas sobre o tema da Parte 3. Você deve expressar opiniões, justificar e discutir.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 1: STRATEGIES ===================== -->
+<section class="main-sec" id="strategies">
+  <div class="sec-label">Seção 1</div>
+  <h2 class="sec-title">Estratégias de <em>Speaking</em></h2>
+  <p class="sec-intro">Técnicas concretas para falar com fluência, sem travar e soar natural — não "decorado".</p>
+
+  <h3 class="sub-title">🕐 Como ganhar tempo sem parecer inseguro</h3>
+  <p>Pausas longas em silêncio = ruim. Pausas preenchidas = natural. Use estas frases enquanto organiza o pensamento:</p>
+
+  <div class="phrases-grid">
+    <div class="phrase-card" onclick="copyPhrase(this)">
+      <button class="copy-btn">COPIAR</button>
+      <div class="eng">"That's a really interesting question…"</div>
+      <div class="pt">Quando precisar de 2–3 segundos para pensar</div>
+    </div>
+    <div class="phrase-card" onclick="copyPhrase(this)">
+      <button class="copy-btn">COPIAR</button>
+      <div class="eng">"Let me think about that for a moment…"</div>
+      <div class="pt">Tom pensativo, nunca parece inseguro</div>
+    </div>
+    <div class="phrase-card" onclick="copyPhrase(this)">
+      <button class="copy-btn">COPIAR</button>
+      <div class="eng">"Well, I'd say that…"</div>
+      <div class="pt">Abre qualquer resposta de forma natural</div>
+    </div>
+    <div class="phrase-card" onclick="copyPhrase(this)">
+      <button class="copy-btn">COPIAR</button>
+      <div class="eng">"It's hard to say exactly, but…"</div>
+      <div class="pt">Para perguntas difíceis — e já começa a responder</div>
+    </div>
+    <div class="phrase-card" onclick="copyPhrase(this)">
+      <button class="copy-btn">COPIAR</button>
+      <div class="eng">"To be honest, I've never really thought about that, but…"</div>
+      <div class="pt">Honesto e natural — compra 3+ segundos</div>
+    </div>
+    <div class="phrase-card" onclick="copyPhrase(this)">
+      <button class="copy-btn">COPIAR</button>
+      <div class="eng">"Now, that's something I feel quite strongly about…"</div>
+      <div class="pt">Para tópicos de opinião — soa apaixonado e fluente</div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">🔗 Conectivos para soar B2+</h3>
+  <p>Trocar "and" e "but" por conectivos variados é um dos atalhos mais rápidos para subir a nota. Use estes:</p>
+
+  <table class="tbl">
+    <thead>
+      <tr><th>Função</th><th>Conectivos B2+</th><th>Exemplo em fala</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Adicionar</strong></td>
+        <td><em>What's more · On top of that · Furthermore · Not only that, but</em></td>
+        <td>"It's quick. <em>What's more</em>, it's very affordable."</td>
+      </tr>
+      <tr>
+        <td><strong>Contrastar</strong></td>
+        <td><em>However · Having said that · On the other hand · That said · Even so</em></td>
+        <td>"I love travelling. <em>Having said that</em>, it can be exhausting."</td>
+      </tr>
+      <tr>
+        <td><strong>Causa / Razão</strong></td>
+        <td><em>Due to · Owing to · As a result · Given that · Seeing as</em></td>
+        <td>"<em>Given that</em> it was late, we decided to stay."</td>
+      </tr>
+      <tr>
+        <td><strong>Exemplo</strong></td>
+        <td><em>For instance · For example · Take… for example · Such as</em></td>
+        <td>"<em>Take social media, for example</em> — it changes everything."</td>
+      </tr>
+      <tr>
+        <td><strong>Concluir</strong></td>
+        <td><em>All in all · On balance · When all's said and done · Ultimately</em></td>
+        <td>"<em>All in all</em>, I think it's a positive development."</td>
+      </tr>
+      <tr>
+        <td><strong>Especular</strong></td>
+        <td><em>It seems to me that · I would imagine · I'd assume · It's likely that</em></td>
+        <td>"<em>It seems to me that</em> these people are colleagues."</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-title">📈 Como desenvolver respostas sem travar</h3>
+  <div class="box tip">
+    <div class="box-title">💡 Fórmula P-E-E (Point · Evidence · Expand)</div>
+    <p>Para qualquer pergunta de opinião:</p>
+    <ol>
+      <li><strong>Point</strong> — dê sua opinião/ponto principal <em>(1 frase)</em></li>
+      <li><strong>Evidence</strong> — justifique com exemplo, razão ou experiência pessoal <em>(1–2 frases)</em></li>
+      <li><strong>Expand</strong> — adicione nuance, contraste ou especulação <em>(1–2 frases)</em></li>
+    </ol>
+    <div class="eg-block mt1">
+      <div class="label">Exemplo — "Do you enjoy travelling?"</div>
+      <div class="eng">
+        <strong>[Point]</strong> "Absolutely — travelling is something I'm really passionate about. <strong>[Evidence]</strong> I've been to several countries and every trip has taught me something new, both about different cultures and about myself. <strong>[Expand]</strong> Having said that, I do think there's something to be said for staying home and appreciating your own surroundings — you don't always need to go far to discover something meaningful."
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">🌡️ Como variar o vocabulário</h3>
+  <p>Evite repetir as mesmas palavras. Substitua os mais genéricos:</p>
+
+  <table class="tbl">
+    <thead><tr><th>Palavra genérica</th><th>Alternativas B2+</th></tr></thead>
+    <tbody>
+      <tr><td><strong>good</strong></td><td><em>beneficial · worthwhile · rewarding · outstanding · remarkable</em></td></tr>
+      <tr><td><strong>bad</strong></td><td><em>detrimental · harmful · damaging · concerning · problematic</em></td></tr>
+      <tr><td><strong>big</strong></td><td><em>substantial · significant · considerable · enormous · vast</em></td></tr>
+      <tr><td><strong>said</strong></td><td><em>mentioned · pointed out · argued · suggested · highlighted</em></td></tr>
+      <tr><td><strong>think</strong></td><td><em>believe · reckon · suspect · assume · feel strongly that</em></td></tr>
+      <tr><td><strong>show</strong></td><td><em>demonstrate · suggest · indicate · imply · reveal</em></td></tr>
+      <tr><td><strong>a lot</strong></td><td><em>a great deal · considerably · substantially · significantly</em></td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-title">💬 Frases para cada parte da prova</h3>
+
+  <div class="tabs-container">
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('strat', 'p1s')">Parte 1</button>
+      <button class="tab-btn" onclick="switchTab('strat', 'p2s')">Parte 2</button>
+      <button class="tab-btn" onclick="switchTab('strat', 'p3s')">Parte 3</button>
+      <button class="tab-btn" onclick="switchTab('strat', 'p4s')">Parte 4</button>
+    </div>
+
+    <div class="tab-panel active" id="strat-p1s">
+      <p class="text-muted" style="margin-bottom:.8rem">Parte 1 — Perguntas pessoais. Responda com 3–5 frases, não com 1 só.</p>
+      <div class="phrases-grid">
+        <div class="phrase-card"><div class="eng">"I'd describe myself as someone who…"</div><div class="pt">Para falar sobre personalidade/hábitos</div></div>
+        <div class="phrase-card"><div class="eng">"As far as I'm concerned…"</div><div class="pt">Para dar opinião pessoal forte</div></div>
+        <div class="phrase-card"><div class="eng">"I've been doing… for about…"</div><div class="pt">Present Perfect Continuous — mostra domínio de tense</div></div>
+        <div class="phrase-card"><div class="eng">"I tend to… rather than…"</div><div class="pt">Expressa preferência com sofisticação</div></div>
+        <div class="phrase-card"><div class="eng">"In my experience…"</div><div class="pt">Ancora resposta em experiência real</div></div>
+        <div class="phrase-card"><div class="eng">"I suppose what I enjoy most is…"</div><div class="pt">Tom reflexivo, soa natural</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="strat-p2s">
+      <p class="text-muted" style="margin-bottom:.8rem">Parte 2 — Comparar 2 fotos + responder pergunta. Nunca descreva apenas — compare e especule.</p>
+      <div class="phrases-grid">
+        <div class="phrase-card"><div class="eng">"In the first photo, I can see what appears to be…"</div><div class="pt">Abertura para descrever com cautela</div></div>
+        <div class="phrase-card"><div class="eng">"…whereas in the second photo…"</div><div class="pt">Conectivo de contraste essencial na Parte 2</div></div>
+        <div class="phrase-card"><div class="eng">"The most striking difference between the two is…"</div><div class="pt">Frase de comparação direta — soa B2+</div></div>
+        <div class="phrase-card"><div class="eng">"Both photos seem to suggest…"</div><div class="pt">Para identificar tema comum</div></div>
+        <div class="phrase-card"><div class="eng">"The person in the photo looks as if they might be…"</div><div class="pt">Especulação — essencial na Parte 2</div></div>
+        <div class="phrase-card"><div class="eng">"I'd imagine this was taken in a… setting because…"</div><div class="pt">Justifica especulação — mostra raciocínio</div></div>
+        <div class="phrase-card"><div class="eng">"If I had to choose, I'd say the first photo is more…"</div><div class="pt">Para responder a pergunta da tarefa</div></div>
+        <div class="phrase-card"><div class="eng">"It's hard to say for certain, but…"</div><div class="pt">Nunca afirme algo que não pode saber</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="strat-p3s">
+      <p class="text-muted" style="margin-bottom:.8rem">Parte 3 — Discussão colaborativa. Você deve interagir, não monologar. Convide o parceiro a falar.</p>
+      <div class="phrases-grid">
+        <div class="phrase-card"><div class="eng">"What do you think about this option?"</div><div class="pt">Convida parceiro — essencial para nota de interação</div></div>
+        <div class="phrase-card"><div class="eng">"I see what you mean, but I'm not entirely sure that…"</div><div class="pt">Discorda sem atacar — tom profissional</div></div>
+        <div class="phrase-card"><div class="eng">"That's a valid point. Having said that…"</div><div class="pt">Concorda parcialmente e desenvolve</div></div>
+        <div class="phrase-card"><div class="eng">"Shall we move on to the next one?"</div><div class="pt">Gerencia o tempo — mostra liderança natural</div></div>
+        <div class="phrase-card"><div class="eng">"I think we can both agree that…"</div><div class="pt">Para convergir na decisão final</div></div>
+        <div class="phrase-card"><div class="eng">"Could you elaborate on that?"</div><div class="pt">Pede que parceiro desenvolva — boa interação</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="strat-p4s">
+      <p class="text-muted" style="margin-bottom:.8rem">Parte 4 — Discussão com o examiner. Respostas mais longas, opiniões justificadas, pensamento crítico.</p>
+      <div class="phrases-grid">
+        <div class="phrase-card"><div class="eng">"I strongly believe that… because…"</div><div class="pt">Opinião firme + justificativa</div></div>
+        <div class="phrase-card"><div class="eng">"There are several factors to consider here…"</div><div class="pt">Sinaliza que vai desenvolver bem</div></div>
+        <div class="phrase-card"><div class="eng">"On the one hand… on the other hand…"</div><div class="pt">Estrutura clássica de argumento balanceado</div></div>
+        <div class="phrase-card"><div class="eng">"I think it depends largely on…"</div><div class="pt">Resposta nuançada — evita simplismo</div></div>
+        <div class="phrase-card"><div class="eng">"In my view, the most significant aspect is…"</div><div class="pt">Prioriza argumento — soa analítico</div></div>
+        <div class="phrase-card"><div class="eng">"Society as a whole would benefit from…"</div><div class="pt">Escala o argumento — pensamento macro</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box warn">
+    <div class="box-title">⚠️ NÃO faça isso no Speaking</div>
+    <ul>
+      <li><strong>Não fique em silêncio.</strong> Use frases de ganho de tempo — qualquer coisa é melhor que silêncio.</li>
+      <li><strong>Não responda com 1 frase.</strong> "Yes, I like music" = nota baixa. Desenvolva sempre.</li>
+      <li><strong>Não ignore o parceiro na Parte 3.</strong> Interagir é 25% da nota.</li>
+      <li><strong>Não descreva apenas as fotos.</strong> Na Parte 2, você deve <em>comparar</em> e <em>especular</em>.</li>
+      <li><strong>Não use o mesmo vocabulário.</strong> Repita "nice" 5 vezes = nota baixa em lexical range.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== SECTION 2: VOCABULARY ===================== -->
+<section class="main-sec" id="vocabulary">
+  <div class="sec-label">Seção 2</div>
+  <h2 class="sec-title"><em>Vocabulário</em> para Speaking</h2>
+  <p class="sec-intro">Do seu material FCE, extraído e adaptado para uso oral — collocations, idioms, similes e expressões prontas.</p>
+
+  <div class="tabs-container">
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('vocab', 'col')">Make / Do / Take</button>
+      <button class="tab-btn" onclick="switchTab('vocab', 'idioms')">Body Idioms</button>
+      <button class="tab-btn" onclick="switchTab('vocab', 'similes')">Similes</button>
+      <button class="tab-btn" onclick="switchTab('vocab', 'topics')">Por Tópico</button>
+    </div>
+
+    <!-- COLLOCATIONS -->
+    <div class="tab-panel active" id="vocab-col">
+      <p class="text-muted mb1">Essas collocations vêm do seu material e são altamente cobradas no FCE — e soam fluentes na fala.</p>
+
+      <h3 class="sub-title" style="margin-top:.5rem">MAKE <span class="pill red">criar · causar</span></h3>
+      <div class="tag-cloud">
+        <span class="tag red">make a <b>decision</b></span>
+        <span class="tag red">make an <b>effort</b></span>
+        <span class="tag red">make a <b>difference</b></span>
+        <span class="tag red">make an <b>apology</b></span>
+        <span class="tag red">make a <b>choice</b></span>
+        <span class="tag red">make <b>progress</b></span>
+        <span class="tag red">make <b>noise</b></span>
+        <span class="tag red">make <b>money</b></span>
+        <span class="tag red">make <b>sense</b></span>
+        <span class="tag red">make <b>friends</b></span>
+        <span class="tag red">make a <b>promise</b></span>
+        <span class="tag red">make a <b>suggestion</b></span>
+      </div>
+
+      <h3 class="sub-title">DO <span class="pill blue">executar · tarefa</span></h3>
+      <div class="tag-cloud">
+        <span class="tag blue">do <b>your best</b></span>
+        <span class="tag blue">do <b>research</b></span>
+        <span class="tag blue">do <b>harm</b></span>
+        <span class="tag blue">do <b>damage</b></span>
+        <span class="tag blue">do a <b>favour</b></span>
+        <span class="tag blue">do <b>business</b></span>
+        <span class="tag blue">do the <b>shopping</b></span>
+        <span class="tag blue">do a <b>course</b></span>
+        <span class="tag blue">do an <b>exercise</b></span>
+        <span class="tag blue">do <b>homework</b></span>
+      </div>
+
+      <h3 class="sub-title">TAKE <span class="pill green">receber · aceitar · durar</span></h3>
+      <div class="tag-cloud">
+        <span class="tag green">take a <b>risk</b></span>
+        <span class="tag green">take <b>part in</b></span>
+        <span class="tag green">take <b>advantage of</b></span>
+        <span class="tag green">take <b>responsibility</b></span>
+        <span class="tag green">take an <b>interest in</b></span>
+        <span class="tag green">take <b>offence</b></span>
+        <span class="tag green">take a <b>break</b></span>
+        <span class="tag green">take <b>care of</b></span>
+        <span class="tag green">take a <b>look</b></span>
+        <span class="tag green">take <b>time</b></span>
+      </div>
+
+      <div class="box tip mt1">
+        <div class="box-title">💡 Como usar no Speaking</div>
+        <div class="eg-block good">
+          <div class="label">✓ B2+ answer using collocations</div>
+          <div class="eng">"I think it's important to <span class="highlight-voc">make an effort</span> to reduce our carbon footprint. If everyone <span class="highlight-voc">takes responsibility</span> and <span class="highlight-voc">makes small changes</span>, it <span class="highlight-voc">makes a real difference</span>."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IDIOMS -->
+    <div class="tab-panel" id="vocab-idioms">
+      <p class="text-muted mb1">Body idioms do seu material — ótimos para usar na Parte 4 quando o tema for relações, comportamento ou sociedade.</p>
+      <table class="tbl">
+        <thead><tr><th>Idiom</th><th>Significado</th><th>Exemplo falado</th></tr></thead>
+        <tbody>
+          <tr><td><em>do sth behind someone's <strong>back</strong></em></td><td>fazer algo às escondidas</td><td>"I hate when people talk about you <em>behind your back</em>."</td></tr>
+          <tr><td><em>keep an eye on sth</em></td><td>vigiar, monitorar</td><td>"Parents should <em>keep an eye on</em> how much time kids spend online."</td></tr>
+          <tr><td><em>see eye to eye</em></td><td>concordar plenamente</td><td>"My partner and I don't always <em>see eye to eye</em> on this."</td></tr>
+          <tr><td><em>pull someone's leg</em></td><td>pregar uma peça, gozar</td><td>"Are you serious or are you <em>pulling my leg</em>?"</td></tr>
+          <tr><td><em>give someone a hand</em></td><td>ajudar alguém</td><td>"I always try to <em>give people a hand</em> when they need it."</td></tr>
+          <tr><td><em>cost an arm and a leg</em></td><td>custar os olhos da cara</td><td>"Electric cars are great, but they <em>cost an arm and a leg</em>."</td></tr>
+          <tr><td><em>face the music</em></td><td>encarar as consequências</td><td>"Eventually, he had to <em>face the music</em>."</td></tr>
+          <tr><td><em>bite off more than you can chew</em></td><td>assumir mais do que aguenta</td><td>"I think I <em>bit off more than I could chew</em> with three projects."</td></tr>
+        </tbody>
+      </table>
+      <div class="box tip mt1">
+        <div class="box-title">💡 Estratégia</div>
+        <p>Use <strong>um idiom por resposta</strong>, no máximo. Dois ou mais parecem forçados. O examiner quer ver que você os usa naturalmente, não que os decorou.</p>
+      </div>
+    </div>
+
+    <!-- SIMILES -->
+    <div class="tab-panel" id="vocab-similes">
+      <p class="text-muted mb1">Similes do seu material — compare com estruturas fixas. São ótimas para a Parte 1 (descrever sentimentos) e Parte 4.</p>
+      <table class="tbl">
+        <thead><tr><th>Simile</th><th>Significado</th><th>Onde usar no Speaking</th></tr></thead>
+        <tbody>
+          <tr><td><em>as <strong>fresh</strong> as a daisy</em></td><td>renovado, cheio de energia</td><td>"After the holiday I felt <em>as fresh as a daisy</em>."</td></tr>
+          <tr><td><em>as <strong>quick</strong> as a flash</em></td><td>rapidíssimo</td><td>"The solution came to me <em>as quick as a flash</em>."</td></tr>
+          <tr><td><em>as <strong>quiet</strong> as a mouse</em></td><td>muito quieto, silencioso</td><td>"My little brother sat there <em>as quiet as a mouse</em>."</td></tr>
+          <tr><td><em>as <strong>strong</strong> as a rock</em></td><td>muito forte, inabalável</td><td>"She's <em>as strong as a rock</em> — nothing shakes her."</td></tr>
+          <tr><td><em>as <strong>white</strong> as a sheet</em></td><td>pálido de medo/susto</td><td>"When he heard the news, he went <em>as white as a sheet</em>."</td></tr>
+          <tr><td><em>as <strong>cold</strong> as ice</em></td><td>geladíssimo</td><td>"By the time we arrived, the food was <em>as cold as ice</em>."</td></tr>
+          <tr><td><em>as <strong>easy</strong> as pie</em></td><td>muito fácil</td><td>"Once you practice, it's <em>as easy as pie</em>."</td></tr>
+          <tr><td><em>as <strong>good</strong> as gold</em></td><td>muito bem-comportado</td><td>"The kids were <em>as good as gold</em> all afternoon."</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BY TOPIC -->
+    <div class="tab-panel" id="vocab-topics">
+      <p class="text-muted mb1">Vocabulário por tema — os mais prováveis de aparecer no FCE Speaking amanhã.</p>
+
+      <div class="accordion">
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            🎓 Educação &amp; Tecnologia
+            <span class="icon">+</span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="tag-cloud">
+                <span class="tag">distance learning</span><span class="tag">curriculum</span><span class="tag">academic pressure</span><span class="tag">digital literacy</span><span class="tag">critical thinking</span><span class="tag">artificial intelligence</span><span class="tag">social media</span><span class="tag">screen time</span><span class="tag">online safety</span><span class="tag">virtual reality</span>
+              </div>
+              <div class="eg-block good mt1">
+                <div class="eng">"Technology has <span class="highlight-str">revolutionised</span> the way we learn. However, it's crucial that students develop <span class="highlight-voc">critical thinking skills</span> rather than relying entirely on AI."</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            🌿 Meio Ambiente
+            <span class="icon">+</span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="tag-cloud">
+                <span class="tag">carbon footprint</span><span class="tag">renewable energy</span><span class="tag">climate change</span><span class="tag">sustainability</span><span class="tag">biodiversity</span><span class="tag">fossil fuels</span><span class="tag">eco-friendly</span><span class="tag">conservation</span><span class="tag">greenhouse gases</span>
+              </div>
+              <div class="eg-block good mt1">
+                <div class="eng">"I think <span class="highlight-voc">sustainability</span> should be at the heart of all government policy. We all have a responsibility to <span class="highlight-voc">reduce our carbon footprint</span>, even in small ways."</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            🚗 Transporte (do seu material)
+            <span class="icon">+</span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="tag-cloud">
+                <span class="tag">seat belt</span><span class="tag">traffic lights</span><span class="tag">driving licence</span><span class="tag">motorway</span><span class="tag">roundabout</span><span class="tag">public transport</span><span class="tag">congestion</span><span class="tag">infrastructure</span><span class="tag">commute</span>
+              </div>
+              <div class="eg-block good mt1">
+                <div class="eng">"Urban congestion is a growing problem. Investment in public transport would make a <span class="highlight-voc">significant difference</span>, whereas simply building more roads only encourages more traffic."</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            🎬 Entretenimento &amp; Mídia
+            <span class="icon">+</span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="tag-cloud">
+                <span class="tag">streaming platforms</span><span class="tag">box office</span><span class="tag">documentary</span><span class="tag">blockbuster</span><span class="tag">plot twist</span><span class="tag">soundtrack</span><span class="tag">genre</span><span class="tag">critic</span><span class="tag">binge-watch</span>
+              </div>
+              <div class="eg-block good mt1">
+                <div class="eng">"I'm a huge film fan. I <span class="highlight-str">tend to prefer</span> thought-provoking dramas over blockbusters — films like <em>Rain Man</em> that explore the human condition are the ones that stay with you."</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            💼 Trabalho &amp; Carreira
+            <span class="icon">+</span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="tag-cloud">
+                <span class="tag">work-life balance</span><span class="tag">remote working</span><span class="tag">career prospects</span><span class="tag">professional development</span><span class="tag">entrepreneurship</span><span class="tag">job market</span><span class="tag">salary</span><span class="tag">ambition</span>
+              </div>
+              <div class="eg-block good mt1">
+                <div class="eng">"I think <span class="highlight-voc">work-life balance</span> is <span class="highlight-voc">crucial</span>. No matter how ambitious you are, <span class="highlight-str">burning out</span> doesn't do anyone any favours."</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /accordion -->
+    </div>
+  </div><!-- /tabs -->
+</section>
+
+<!-- ===================== SECTION 3: GRAMMAR ===================== -->
+<section class="main-sec" id="grammar">
+  <div class="sec-label">Seção 3</div>
+  <h2 class="sec-title">Gramática que <em>impressiona</em> no oral</h2>
+  <p class="sec-intro">Do seu material FCE — as estruturas mais úteis para speaking. Você não precisa de gramática perfeita; precisa de gramática variada.</p>
+
+  <h3 class="sub-title">⏳ Tempos Verbais — use variedade</h3>
+  <p>No speaking B2+, o examiner quer ouvir <strong>mais de um tempo verbal</strong> na mesma resposta. Compare:</p>
+
+  <div class="vs-box">
+    <div class="col col-a">
+      <h5>❌ Nível A2 — só Present Simple</h5>
+      <p style="font-size:.88rem">"I like music. I listen to music every day. I enjoy all genres."</p>
+    </div>
+    <div class="divider">vs</div>
+    <div class="col col-b">
+      <h5>✓ Nível B2+ — vários tempos</h5>
+      <p style="font-size:.88rem">"I've <em>been into</em> music since I was a kid — I <em>used to play</em> guitar, and I've <em>been taking</em> piano lessons for about a year now."</p>
+    </div>
+  </div>
+
+  <table class="tbl mt1">
+    <thead><tr><th>Tempo verbal</th><th>Quando usar no Speaking</th><th>Frase de exemplo</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Present Perfect Continuous</strong><br><em>have been + -ing</em></td>
+        <td>Ação que durou e ainda tem efeito agora — <strong>ótimo para Part 1</strong></td>
+        <td>"I've been learning English for about 10 years."</td>
+      </tr>
+      <tr>
+        <td><strong>Past Perfect</strong><br><em>had + participle</em></td>
+        <td>Sequência de eventos passados — mostra sophistication</td>
+        <td>"By the time I arrived, everyone had already left."</td>
+      </tr>
+      <tr>
+        <td><strong>used to / would</strong></td>
+        <td>Hábitos passados — <strong>muito natural no Speaking</strong></td>
+        <td>"I used to hate sport, but now I love it."</td>
+      </tr>
+      <tr>
+        <td><strong>Conditional (I'd / It would)</strong></td>
+        <td>Especulação sobre fotos (Parte 2) e opiniões (Parte 4)</td>
+        <td>"I'd imagine this is a rather stressful job."</td>
+      </tr>
+      <tr>
+        <td><strong>Passive voice</strong></td>
+        <td>Discussões sobre sociedade, tecnologia, ambiente</td>
+        <td>"A lot of pressure is placed on young people today."</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-title">🔑 Verb Patterns — evite erros clássicos</h3>
+  <p>Do seu material — os verbos que mais confundem e mais caem. Use no Speaking para mostrar precisão gramatical.</p>
+
+  <div class="accordion">
+    <div class="acc-item">
+      <button class="acc-trigger" onclick="toggleAcc(this)">
+        remember / forget — sentidos opostos
+        <span class="icon">+</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          <div class="vs-box">
+            <div class="col col-a">
+              <h5>remember TO do</h5>
+              <p style="font-size:.85rem">Lembrar de fazer algo (ainda não fez)</p>
+              <div class="eg-block"><div class="eng">"Remember to call me later."</div></div>
+            </div>
+            <div class="divider">vs</div>
+            <div class="col col-b">
+              <h5>remember -ING</h5>
+              <p style="font-size:.85rem">Ter memória de algo já feito</p>
+              <div class="eg-block"><div class="eng">"I remember meeting her for the first time."</div></div>
+            </div>
+          </div>
+          <div class="box good" style="margin-top:.8rem">
+            <div class="box-title">✓ Use no Speaking</div>
+            <p>"I'll never forget <strong>visiting</strong> Paris for the first time — it was absolutely breathtaking."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-trigger" onclick="toggleAcc(this)">
+        stop — dois significados completamente diferentes
+        <span class="icon">+</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          <div class="vs-box">
+            <div class="col col-a">
+              <h5>stop TO do</h5>
+              <p style="font-size:.85rem">Parar algo PARA fazer outra coisa</p>
+              <div class="eg-block"><div class="eng">"We stopped to take photos of the view."</div></div>
+            </div>
+            <div class="divider">vs</div>
+            <div class="col col-b">
+              <h5>stop -ING</h5>
+              <p style="font-size:.85rem">Parar de fazer algo por completo</p>
+              <div class="eg-block"><div class="eng">"I stopped eating meat two years ago."</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-trigger" onclick="toggleAcc(this)">
+        used to / would — hábitos passados (armadilha clássica)
+        <span class="icon">+</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          <div class="box warn">
+            <div class="box-title">⚠️ would NÃO funciona com estados</div>
+            <p>Estados: have, be, know, like, own, live (como estado)…</p>
+            <div class="eg-block bad"><div class="label">✗ Errado</div><div class="eng">I would have a dog when I was young.</div></div>
+            <div class="eg-block good"><div class="label">✓ Correto</div><div class="eng">I used to have a dog when I was young.</div></div>
+          </div>
+          <div class="eg-block good">
+            <div class="label">✓ would — ação repetida (correto)</div>
+            <div class="eng">"Every summer, my family would rent a house by the sea and we'd spend the whole day on the beach."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-trigger" onclick="toggleAcc(this)">
+        Modal verbs — especulação e dedução (Parte 2 e 4)
+        <span class="icon">+</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          <p style="margin-bottom:.8rem;font-size:.88rem">Para especular sobre fotos ou situações hipotéticas:</p>
+          <table class="tbl">
+            <thead><tr><th>Modal</th><th>Grau de certeza</th><th>Exemplo no Speaking</th></tr></thead>
+            <tbody>
+              <tr><td><strong>must be</strong></td><td>~95% certo (positivo)</td><td>"She <em>must be</em> a professional athlete."</td></tr>
+              <tr><td><strong>can't be</strong></td><td>~95% certo (negativo)</td><td>"It <em>can't be</em> cheap to live there."</td></tr>
+              <tr><td><strong>could / might be</strong></td><td>~50% possível</td><td>"This <em>could be</em> a hospital or a school."</td></tr>
+              <tr><td><strong>must have been</strong></td><td>certeza sobre passado</td><td>"It <em>must have been</em> very challenging."</td></tr>
+              <tr><td><strong>should have</strong></td><td>crítica / arrependimento</td><td>"They <em>should have</em> invested in renewables earlier."</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub-title">🔄 Estruturas para soar mais fluente</h3>
+  <div class="phrases-grid">
+    <div class="phrase-card">
+      <div class="eng">"What strikes me most about this is…"</div>
+      <div class="pt">Estrutura de ênfase — soa analítico</div>
+    </div>
+    <div class="phrase-card">
+      <div class="eng">"The thing about [X] is that…"</div>
+      <div class="pt">Cleft sentence — soa muito natural em fala</div>
+    </div>
+    <div class="phrase-card">
+      <div class="eng">"What I find particularly interesting is…"</div>
+      <div class="pt">Estrutura de focalização — B2+ imediato</div>
+    </div>
+    <div class="phrase-card">
+      <div class="eng">"It's not so much X as Y"</div>
+      <div class="pt">Contraste sofisticado — muito eficaz</div>
+    </div>
+    <div class="phrase-card">
+      <div class="eng">"Not only is it… but it also…"</div>
+      <div class="pt">Inversão — advanced structure</div>
+    </div>
+    <div class="phrase-card">
+      <div class="eng">"The more I think about it, the more I believe…"</div>
+      <div class="pt">Double comparative — soa muito fluente</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 4: MODEL ANSWERS ===================== -->
+<section class="main-sec" id="models">
+  <div class="sec-label">Seção 4</div>
+  <h2 class="sec-title">Respostas <em>Modelo</em> B2+</h2>
+  <p class="sec-intro">Respostas anotadas para cada parte da prova. Analise a estrutura, não decore o conteúdo.</p>
+
+  <div class="tabs-container">
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('model', 'mod1')">Parte 1</button>
+      <button class="tab-btn" onclick="switchTab('model', 'mod2')">Parte 2</button>
+      <button class="tab-btn" onclick="switchTab('model', 'mod3')">Parte 3</button>
+      <button class="tab-btn" onclick="switchTab('model', 'mod4')">Parte 4</button>
+    </div>
+
+    <div class="tab-panel active" id="model-mod1">
+      <h3 class="sub-title" style="margin-top:.5rem">Q: "What kind of activities do you enjoy in your free time?"</h3>
+      <div class="model-answer">
+        <div class="model-answer-head">
+          <span>✓ Resposta Modelo B2+</span>
+          <span>Parte 1 — Interview</span>
+        </div>
+        <div class="model-answer-body">
+          <p>"Well, <span class="highlight-str">I'd say I'm</span> someone who really values their free time. I've <span class="highlight-str">been getting into</span> photography lately — I started about a year ago and I've been <span class="highlight-voc">making steady progress</span>. <span class="highlight-str">What I particularly enjoy</span> is the challenge of capturing the right moment. <span class="highlight-str">Having said that</span>, I also <span class="highlight-str">used to</span> play football when I was younger, so sport has always been part of my life. <span class="highlight-str">All in all</span>, I think it's important to have a variety of interests — it keeps life interesting."</p>
+        </div>
+        <div class="model-annotation">
+          <span>🔵 Present Perfect Continuous</span>
+          <span>🔴 Collocation</span>
+          <span>⚡ Cleft structure</span>
+          <span>🔗 Connectives × 2</span>
+          <span>⏳ used to (past habit)</span>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Q: "Do you think social media has a positive or negative effect on young people?"</h3>
+      <div class="model-answer">
+        <div class="model-answer-head">
+          <span>✓ Resposta Modelo B2+</span>
+          <span>Parte 1 — Opinion question</span>
+        </div>
+        <div class="model-answer-body">
+          <p>"<span class="highlight-str">It's hard to give a definitive answer</span> because I think it depends on how it's used. <span class="highlight-str">On the one hand</span>, social media allows young people to connect, to express themselves and even <span class="highlight-voc">take part in</span> important conversations about society. <span class="highlight-str">On the other hand</span>, there's growing evidence that excessive use <span class="highlight-str">can be</span> detrimental to mental health. <span class="highlight-str">What I believe</span> is that digital literacy — knowing how to use these platforms responsibly — <span class="highlight-str">should be</span> taught in schools."</p>
+        </div>
+        <div class="model-annotation">
+          <span>⚖️ Balanced argument structure</span>
+          <span>🔴 Collocation: take part in</span>
+          <span>📊 Passive voice</span>
+          <span>💡 Cleft: "What I believe"</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="model-mod2">
+      <h3 class="sub-title" style="margin-top:.5rem">Task: "Compare these two photos of people working, and say which job looks more rewarding."</h3>
+      <div class="model-answer">
+        <div class="model-answer-head">
+          <span>✓ Resposta Modelo B2+</span>
+          <span>Parte 2 — Long Turn (1 minuto)</span>
+        </div>
+        <div class="model-answer-body">
+          <p>"<span class="highlight-str">In the first photo, I can see what appears to be</span> a doctor or medical professional treating a patient in a clinical setting. The atmosphere looks quite intense and focused. <span class="highlight-str">Whereas in the second photo</span>, there's someone who <span class="highlight-str">seems to be</span> working outdoors — perhaps a landscape gardener or an architect on a building site."</p>
+          <p>"<span class="highlight-str">The most striking difference between the two</span> is the environment — one is very controlled and sterile, the other open and physical. <span class="highlight-str">Both photos suggest</span> a high level of dedication and expertise, though in very different ways."</p>
+          <p>"<span class="highlight-str">If I had to say</span> which looks more rewarding, I'd choose the first — mainly because the direct impact on someone's health and wellbeing <span class="highlight-str">must be</span> incredibly fulfilling. <span class="highlight-str">Having said that</span>, working outdoors has its own obvious advantages."</p>
+        </div>
+        <div class="model-annotation">
+          <span>🔭 Speculation: "appears to be"</span>
+          <span>⚖️ Contrast: "whereas"</span>
+          <span>📊 Modal: "must be"</span>
+          <span>🎯 Answers task directly</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="model-mod3">
+      <h3 class="sub-title" style="margin-top:.5rem">Task: "Discuss which of these activities would be best for a team-building event at work."</h3>
+      <div class="model-answer">
+        <div class="model-answer-head">
+          <span>✓ Resposta Modelo B2+</span>
+          <span>Parte 3 — Collaborative discussion</span>
+        </div>
+        <div class="model-answer-body">
+          <p>[Você abre] "<span class="highlight-str">So, shall we start with</span> the cooking class? I think it could work well because it encourages people to <span class="highlight-voc">work together</span> and <span class="highlight-voc">make decisions</span> as a group. <span class="highlight-str">What do you think?</span>"</p>
+          <p>[Respondendo ao parceiro] "<span class="highlight-str">That's a valid point</span> — an outdoor challenge would definitely build trust. <span class="highlight-str">I see what you mean, but</span> I wonder if it might exclude people who aren't very sporty. <span class="highlight-str">Having said that</span>, it does seem more memorable."</p>
+          <p>[Chegando à decisão] "<span class="highlight-str">I think we can both agree that</span> the most important factor is inclusivity. On balance, the cooking class seems the safest option — but the escape room could also be worth considering. <span class="highlight-str">Shall we go with</span> the cooking class, then?"</p>
+        </div>
+        <div class="model-annotation">
+          <span>🤝 Invites partner × 2</span>
+          <span>⚖️ Agrees + disagrees</span>
+          <span>✅ Reaches decision</span>
+          <span>🎯 Manages conversation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="model-mod4">
+      <h3 class="sub-title" style="margin-top:.5rem">Q: "Do you think governments should do more to protect the environment?"</h3>
+      <div class="model-answer">
+        <div class="model-answer-head">
+          <span>✓ Resposta Modelo B2+</span>
+          <span>Parte 4 — Discussion</span>
+        </div>
+        <div class="model-answer-body">
+          <p>"<span class="highlight-str">Absolutely, and I feel quite strongly about this.</span> <span class="highlight-str">There are several factors to consider.</span> Firstly, climate change is no longer a distant threat — <span class="highlight-str">it's something that's already having a</span> <span class="highlight-voc">significant impact</span> on communities worldwide."</p>
+          <p>"<span class="highlight-str">On the one hand</span>, governments have the power to enact legislation and <span class="highlight-voc">make a real difference</span> at scale — something individuals simply cannot <span class="highlight-voc">do on their own</span>. <span class="highlight-str">On the other hand</span>, there's a risk of economic disruption if changes happen too rapidly."</p>
+          <p>"<span class="highlight-str">Ultimately, I believe</span> that a balanced approach is needed — one that <span class="highlight-str">takes into account</span> both environmental urgency and economic reality. <span class="highlight-str">The more we delay, the more costly</span> the solutions will become."</p>
+        </div>
+        <div class="model-annotation">
+          <span>💪 Strong opinion opener</span>
+          <span>📋 "Several factors" — signals development</span>
+          <span>🔴 Collocations × 3</span>
+          <span>🔄 Double comparative</span>
+          <span>✅ Reaches conclusion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 5: SIMULADO ===================== -->
+<section class="main-sec" id="simulado">
+  <div class="sec-label">Seção 5 — Simulado Interativo</div>
+  <h2 class="sec-title">Mini <em>Simulado</em> Cambridge Speaking</h2>
+  <p class="sec-intro">Perguntas no estilo real do FCE. Pressione START, fale em voz alta por 60 segundos, depois veja a resposta modelo. Treine como se fosse amanhã — porque é.</p>
+
+  <div class="box tip">
+    <div class="box-title">💡 Como usar este simulado</div>
+    <ol>
+      <li>Leia a pergunta em voz alta.</li>
+      <li>Pressione <strong>START</strong> e responda por 60 segundos (fale de verdade).</li>
+      <li>Quando o timer acabar, pressione <strong>Ver Resposta Modelo</strong>.</li>
+      <li>Compare a sua com a modelo e identifique diferenças.</li>
+    </ol>
+  </div>
+
+  <div class="sim-progress-bar">
+    <div class="fill" id="simProgressBar" style="width:0%"></div>
+  </div>
+  <p class="text-muted" style="text-align:right;font-size:.8rem;margin-top:-.5rem;margin-bottom:1rem" id="simProgressText">0 / 8 perguntas</p>
+
+  <!-- PART 1 -->
+  <h3 class="sub-title">Parte 1 — Interview</h3>
+
+  <div class="simulado-card" id="simQ1">
+    <div class="sim-head">
+      <span class="sim-part-label">🎙️ Parte 1 — Pergunta 1</span>
+      <span class="sim-timer" id="timer1">1:00</span>
+    </div>
+    <div class="sim-body">
+      <div class="sim-question">"Tell me about something you've been learning or doing recently that you find interesting."</div>
+      <div class="sim-instruction">Responda por 3–5 frases. Use Present Perfect Continuous. Desenvolva com exemplos.</div>
+      <div class="sim-controls">
+        <button class="btn btn-primary" onclick="startTimer(1)">▶ START</button>
+        <button class="btn btn-secondary" onclick="resetTimer(1)">↺ RESET</button>
+        <button class="btn btn-green" onclick="showAnswer('a1')">Ver Resposta Modelo</button>
+      </div>
+      <div class="sim-answer" id="a1">
+        <div class="sim-answer-label">✓ RESPOSTA MODELO B2+</div>
+        <div class="sim-answer-text">"Well, I've been getting into <span class="highlight-voc">photography</span> over the past few months, which I've found incredibly rewarding. <span class="highlight-str">What I particularly enjoy</span> is the challenge of capturing a fleeting moment — you can't <span class="highlight-voc">make the same mistake twice</span>, so to speak. I've been <span class="highlight-voc">making steady progress</span>, and I've even started taking an online course. <span class="highlight-str">Having said that</span>, I still have a lot to learn, which is part of what makes it exciting."</div>
+        <div class="sim-tips">🔑 <strong>O que fez bem:</strong> Usou Present Perfect Continuous, collocations, uma cleft sentence, conectivo de contraste. <strong>Duração ideal:</strong> 45–60 segundos.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="simulado-card" id="simQ2">
+    <div class="sim-head">
+      <span class="sim-part-label">🎙️ Parte 1 — Pergunta 2</span>
+      <span class="sim-timer" id="timer2">1:00</span>
+    </div>
+    <div class="sim-body">
+      <div class="sim-question">"How have your habits or interests changed since you were younger?"</div>
+      <div class="sim-instruction">Use used to / would para hábitos passados. Contraste com o presente.</div>
+      <div class="sim-controls">
+        <button class="btn btn-primary" onclick="startTimer(2)">▶ START</button>
+        <button class="btn btn-secondary" onclick="resetTimer(2)">↺ RESET</button>
+        <button class="btn btn-green" onclick="showAnswer('a2')">Ver Resposta Modelo</button>
+      </div>
+      <div class="sim-answer" id="a2">
+        <div class="sim-answer-label">✓ RESPOSTA MODELO B2+</div>
+        <div class="sim-answer-text">"Quite a lot, actually. When I was younger, I <span class="highlight-str">used to spend</span> most of my free time playing video games — my friends and I <span class="highlight-str">would meet</span> every weekend and stay up all night. Nowadays, I tend to <span class="highlight-voc">take an interest in</span> things that are a bit more — I suppose — meaningful. I've been reading more, and I've <span class="highlight-str">been trying to</span> learn a new language. <span class="highlight-str">I think what changed</span> was going to university — it broadened my perspective considerably."</div>
+        <div class="sim-tips">🔑 <strong>Estruturas usadas:</strong> used to, would, Present Perfect Continuous, cleft sentence. Contraste passado/presente claro.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 2 -->
+  <h3 class="sub-title mt2">Parte 2 — Long Turn</h3>
+
+  <div class="simulado-card" id="simQ3">
+    <div class="sim-head">
+      <span class="sim-part-label">🎙️ Parte 2 — Long Turn (1 min)</span>
+      <span class="sim-timer" id="timer3">1:00</span>
+    </div>
+    <div class="sim-body">
+      <div class="sim-question">Compare these two situations: [Foto 1] A person studying alone late at night. [Foto 2] A group of students studying together in a library. Which situation do you think is more effective for learning?</div>
+      <div class="sim-instruction">Compare as duas fotos, especule sobre o contexto e responda a pergunta ao final. Use "whereas", "seems to", "might be".</div>
+      <div class="sim-controls">
+        <button class="btn btn-primary" onclick="startTimer(3)">▶ START</button>
+        <button class="btn btn-secondary" onclick="resetTimer(3)">↺ RESET</button>
+        <button class="btn btn-green" onclick="showAnswer('a3')">Ver Resposta Modelo</button>
+      </div>
+      <div class="sim-answer" id="a3">
+        <div class="sim-answer-label">✓ RESPOSTA MODELO B2+</div>
+        <div class="sim-answer-text">"In the first photo, there's someone who <span class="highlight-str">appears to be</span> studying alone late at night — they look quite focused, but also perhaps a little tired or stressed. <span class="highlight-str">Whereas in the second</span>, a group of students <span class="highlight-str">seem to be</span> collaborating in a library, which suggests a more social approach to learning. <span class="highlight-str">The most striking difference</span> is the atmosphere — one is isolated, the other communal. Both <span class="highlight-str">could be</span> effective depending on the person and the subject. <span class="highlight-str">If I had to choose</span>, I'd say group study is often more motivating, particularly when tackling complex topics — though some subjects genuinely require quiet, focused, individual work."</div>
+        <div class="sim-tips">🔑 <strong>Usa:</strong> appears to be, whereas, seems to, could be, if I had to choose — todas as estruturas-chave da Parte 2.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="simulado-card" id="simQ4">
+    <div class="sim-head">
+      <span class="sim-part-label">🎙️ Parte 2 — Short response (20 sec)</span>
+      <span class="sim-timer" id="timer4">0:20</span>
+    </div>
+    <div class="sim-body">
+      <div class="sim-question">"Which situation do YOU prefer — studying alone or with others? Why?" (pergunta rápida ao parceiro)</div>
+      <div class="sim-instruction">Responda em 15–20 segundos. Curto, direto, mas com justificativa.</div>
+      <div class="sim-controls">
+        <button class="btn btn-primary" onclick="startTimer(4, 20)">▶ START</button>
+        <button class="btn btn-secondary" onclick="resetTimer(4, 20)">↺ RESET</button>
+        <button class="btn btn-green" onclick="showAnswer('a4')">Ver Resposta Modelo</button>
+      </div>
+      <div class="sim-answer" id="a4">
+        <div class="sim-answer-label">✓ RESPOSTA MODELO B2+</div>
+        <div class="sim-answer-text">"Personally, I tend to prefer studying alone — I find I <span class="highlight-voc">make more progress</span> when I can focus without distractions. <span class="highlight-str">Having said that</span>, group study can be invaluable for discussing ideas."</div>
+        <div class="sim-tips">🔑 20 segundos é suficiente — não tente dizer tudo. Seja direto, use um conectivo e pare.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 3 -->
+  <h3 class="sub-title mt2">Parte 3 — Collaborative Task</h3>
+
+  <div class="simulado-card" id="simQ5">
+    <div class="sim-head">
+      <span class="sim-part-label">🎙️ Parte 3 — Discussão colaborativa</span>
+      <span class="sim-timer" id="timer5">1:00</span>
+    </div>
+    <div class="sim-body">
+      <div class="sim-question">A school wants to improve students' wellbeing. Discuss: [1] free sports facilities [2] mental health workshops [3] flexible timetables [4] a student wellbeing app. Which two would be most effective?</div>
+      <div class="sim-instruction">Imagine que você está discutindo com um parceiro. Proponha, reaja, negocie. Use frases de interação.</div>
+      <div class="sim-controls">
+        <button class="btn btn-primary" onclick="startTimer(5)">▶ START</button>
+        <button class="btn btn-secondary" onclick="resetTimer(5)">↺ RESET</button>
+        <button class="btn btn-green" onclick="showAnswer('a5')">Ver Resposta Modelo</button>
+      </div>
+      <div class="sim-answer" id="a5">
+        <div class="sim-answer-label">✓ RESPOSTA MODELO B2+</div>
+        <div class="sim-answer-text">"<span class="highlight-str">So, shall we start with</span> mental health workshops? I think they address the issue most directly — <span class="highlight-voc">mental health</span> is something that affects students' performance <span class="highlight-voc">significantly</span>. <span class="highlight-str">What do you reckon?</span> … <span class="highlight-str">That's a fair point</span> about the sports facilities — exercise does <span class="highlight-voc">make a real difference</span> to wellbeing. <span class="highlight-str">I see where you're coming from, but</span> I wonder if the app might be too reliant on technology. <span class="highlight-str">On balance</span>, I'd go for mental health workshops and flexible timetables — they seem the most <span class="highlight-voc">sustainable</span> in the long run."</div>
+        <div class="sim-tips">🔑 <strong>Chave:</strong> Convide o parceiro. Use frases de concordância/discordância. Chegue a uma decisão clara.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 4 -->
+  <h3 class="sub-title mt2">Parte 4 — Discussion</h3>
+
+  <div class="simulado-card" id="simQ6">
+    <div class="sim-head">
+      <span class="sim-part-label">🎙️ Parte 4 — Pergunta 1</span>
+      <span class="sim-timer" id="timer6">1:00</span>
+    </div>
+    <div class="sim-body">
+      <div class="sim-question">"Some people believe that social media does more harm than good to young people's mental health. Do you agree?"</div>
+      <div class="sim-instruction">Resposta mais longa (45–60 seg). Estruture: opinião + dois argumentos + conclusão.</div>
+      <div class="sim-controls">
+        <button class="btn btn-primary" onclick="startTimer(6)">▶ START</button>
+        <button class="btn btn-secondary" onclick="resetTimer(6)">↺ RESET</button>
+        <button class="btn btn-green" onclick="showAnswer('a6')">Ver Resposta Modelo</button>
+      </div>
+      <div class="sim-answer" id="a6">
+        <div class="sim-answer-label">✓ RESPOSTA MODELO B2+</div>
+        <div class="sim-answer-text">"<span class="highlight-str">I think there's a great deal of truth in that statement</span>, but it's perhaps an oversimplification. <span class="highlight-str">On the one hand</span>, there's compelling evidence that constant comparison on platforms like Instagram can <span class="highlight-str">have a detrimental effect on</span> self-esteem, particularly among teenagers. <span class="highlight-str">On the other hand</span>, social media can be a powerful tool for community-building and support — many young people find genuine connection online. <span class="highlight-str">What I believe</span> is that the issue isn't social media itself, but the <span class="highlight-str">lack of digital literacy</span> in schools. <span class="highlight-str">Ultimately</span>, it's not so much about banning these platforms as teaching young people to use them responsibly."</div>
+        <div class="sim-tips">🔑 <strong>Estruturas B2+:</strong> "it's perhaps an oversimplification" · "On the one hand / other" · cleft "What I believe" · "not so much X as Y"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="simulado-card" id="simQ7">
+    <div class="sim-head">
+      <span class="sim-part-label">🎙️ Parte 4 — Pergunta 2</span>
+      <span class="sim-timer" id="timer7">1:00</span>
+    </div>
+    <div class="sim-body">
+      <div class="sim-question">"How important is it for schools to teach students about environmental issues?"</div>
+      <div class="sim-instruction">Use vocabulário de meio ambiente. Expresse opinião forte com justificativa.</div>
+      <div class="sim-controls">
+        <button class="btn btn-primary" onclick="startTimer(7)">▶ START</button>
+        <button class="btn btn-secondary" onclick="resetTimer(7)">↺ RESET</button>
+        <button class="btn btn-green" onclick="showAnswer('a7')">Ver Resposta Modelo</button>
+      </div>
+      <div class="sim-answer" id="a7">
+        <div class="sim-answer-label">✓ RESPOSTA MODELO B2+</div>
+        <div class="sim-answer-text">"<span class="highlight-str">I feel very strongly that</span> environmental education is absolutely essential — perhaps more so now than ever before. <span class="highlight-str">Given that</span> climate change is one of the most pressing challenges of our time, schools have a responsibility to equip students with the knowledge to <span class="highlight-voc">make informed decisions</span>. <span class="highlight-str">What's more</span>, young people are the ones who will be most affected — so they have the most at stake. <span class="highlight-str">Having said that</span>, education alone isn't enough — it needs to be accompanied by systemic change at a government level. <span class="highlight-str">All in all</span>, I believe it's <span class="highlight-str">not so much an option as a necessity</span>."</div>
+        <div class="sim-tips">🔑 <strong>Vocabulário:</strong> pressing challenges · equip students · informed decisions. <strong>Estruturas:</strong> given that · what's more · not so much X as Y.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="simulado-card" id="simQ8">
+    <div class="sim-head">
+      <span class="sim-part-label">🎙️ Parte 4 — Pergunta difícil</span>
+      <span class="sim-timer" id="timer8">1:00</span>
+    </div>
+    <div class="sim-body">
+      <div class="sim-question">"Some people argue that working from home makes people less productive. What are your thoughts?"</div>
+      <div class="sim-instruction">Pergunta controversa — mostre que consegue ver os dois lados antes de concluir.</div>
+      <div class="sim-controls">
+        <button class="btn btn-primary" onclick="startTimer(8)">▶ START</button>
+        <button class="btn btn-secondary" onclick="resetTimer(8)">↺ RESET</button>
+        <button class="btn btn-green" onclick="showAnswer('a8')">Ver Resposta Modelo</button>
+      </div>
+      <div class="sim-answer" id="a8">
+        <div class="sim-answer-label">✓ RESPOSTA MODELO B2+</div>
+        <div class="sim-answer-text">"<span class="highlight-str">That's an interesting claim, and I think it depends largely on</span> the individual and the type of work involved. <span class="highlight-str">In my experience</span>, remote working can actually boost productivity — you eliminate the <span class="highlight-str">lengthy commute</span>, reduce office distractions and gain more control over your environment. <span class="highlight-str">On the other hand</span>, some people genuinely <span class="highlight-str">struggle to</span> maintain boundaries between work and personal life, which can be <span class="highlight-voc">detrimental</span> in the long run. <span class="highlight-str">I'd argue that</span> the key is flexibility — a hybrid model gives employees the best of both worlds."</div>
+        <div class="sim-tips">🔑 Boa resposta porque: não concorda nem discorda diretamente → mostra nuance → usa "I'd argue that" para posição pessoal no final.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================== SECTION 6: ERRORS ===================== -->
+<section class="main-sec" id="errors">
+  <div class="sec-label">Seção 6</div>
+  <h2 class="sec-title">Erros que você <em>deve evitar</em></h2>
+  <p class="sec-intro">Lista curta e direta — os erros mais comuns de candidatos B2 que perdem nota à toa. Leia antes de dormir.</p>
+
+  <ul class="error-list">
+    <li>
+      <div class="err-num">1</div>
+      <div class="err-body">
+        <strong>Resposta curta demais</strong>
+        <span class="err-eg-bad">❌ "Yes, I like music."</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ "Yes, music has always been a big part of my life. I've been listening to jazz lately, which I find incredibly relaxing…"</span>
+      </div>
+    </li>
+    <li>
+      <div class="err-num">2</div>
+      <div class="err-body">
+        <strong>Só descrever as fotos na Parte 2 (sem comparar)</strong>
+        <span class="err-eg-bad">❌ "In the first photo there is a man. In the second photo there is a woman."</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ "…whereas in the second photo, the atmosphere seems much more relaxed, which suggests a very different working environment."</span>
+      </div>
+    </li>
+    <li>
+      <div class="err-num">3</div>
+      <div class="err-body">
+        <strong>would com verbos de estado (erro clássico do seu material)</strong>
+        <span class="err-eg-bad">❌ "My family would have a small house." / "He would be shy."</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ "My family used to have a small house." / "He used to be shy."</span>
+      </div>
+    </li>
+    <li>
+      <div class="err-num">4</div>
+      <div class="err-body">
+        <strong>Não convidar o parceiro na Parte 3</strong>
+        <span class="err-eg-bad">❌ Falar 3 minutos sem parar, ignorando o parceiro completamente.</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ "What do you think?" / "Do you agree?" / "Shall we move on?"</span>
+      </div>
+    </li>
+    <li>
+      <div class="err-num">5</div>
+      <div class="err-body">
+        <strong>Silêncio longo quando não sabe o que dizer</strong>
+        <span class="err-eg-bad">❌ [5 segundos de silêncio]</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ "That's a really interesting question — let me think about that for a moment…"</span>
+      </div>
+    </li>
+    <li>
+      <div class="err-num">6</div>
+      <div class="err-body">
+        <strong>Vocabulário repetitivo (good, nice, big, bad)</strong>
+        <span class="err-eg-bad">❌ "It's very good and very nice. It was a very big change."</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ "It's remarkably beneficial. It was a substantial shift."</span>
+      </div>
+    </li>
+    <li>
+      <div class="err-num">7</div>
+      <div class="err-body">
+        <strong>Dar opinião sem justificar</strong>
+        <span class="err-eg-bad">❌ "I agree with this. It is true."</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ "I agree, mainly because… Furthermore, research suggests that…"</span>
+      </div>
+    </li>
+    <li>
+      <div class="err-num">8</div>
+      <div class="err-body">
+        <strong>Usar só um tempo verbal em toda a resposta</strong>
+        <span class="err-eg-bad">❌ "I work. I like work. I go to work every day."</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ Mix: "I've been working here for two years. I used to work remotely, but now I prefer the office."</span>
+      </div>
+    </li>
+    <li>
+      <div class="err-num">9</div>
+      <div class="err-body">
+        <strong>Falar muito rápido / atropelar as palavras</strong>
+        <span class="err-eg-bad">❌ Velocidade = clareza? Não. Pronúncia clara vale 25% da nota.</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ Fale em ritmo natural — uma pausa bem colocada soa mais fluente do que pressa nervosa.</span>
+      </div>
+    </li>
+    <li>
+      <div class="err-num">10</div>
+      <div class="err-body">
+        <strong>Soar "decorado" — respostas que não se conectam com a pergunta</strong>
+        <span class="err-eg-bad">❌ Dar a mesma resposta para qualquer pergunta sobre trabalho.</span>
+        <span class="arr">→</span>
+        <span class="err-eg-good">✓ Ouça a pergunta com atenção. Use pelo menos uma palavra da pergunta na sua resposta para mostrar que está respondendo diretamente.</span>
+      </div>
+    </li>
+  </ul>
+
+  <div class="box good" style="margin-top:2rem">
+    <div class="box-title">✓ Checklist de última hora — marque o que já domina</div>
+    <ul class="checklist" id="checklistFinal" style="margin-top:.8rem">
+      <li onclick="toggleCheck(this)"><b>Sei usar pelo menos 6 frases de ganho de tempo.</b><span class="sub">That's a really interesting question · Let me think · I'd say…</span></li>
+      <li onclick="toggleCheck(this)"><b>Sei comparar fotos sem só descrever</b> — usando whereas, seems to, appears to be.<span class="sub">Parte 2: comparar + especular + responder tarefa</span></li>
+      <li onclick="toggleCheck(this)"><b>Sei convidar o parceiro</b> — "What do you think?" "Do you agree?"<span class="sub">Parte 3: interagir é obrigatório</span></li>
+      <li onclick="toggleCheck(this)"><b>Sei usar used to e would corretamente</b> (would NÃO com estados).<span class="sub">used to have / used to be — NUNCA would have / would be</span></li>
+      <li onclick="toggleCheck(this)"><b>Sei usar modais de especulação:</b> must be, can't be, could be, might be.<span class="sub">Essencial para Parte 2 e Parte 4</span></li>
+      <li onclick="toggleCheck(this)"><b>Sei pelo menos 6 conectivos de contraste e adição.</b><span class="sub">Having said that · What's more · On the other hand · Furthermore</span></li>
+      <li onclick="toggleCheck(this)"><b>Sei collocations com make, do e take.</b><span class="sub">make a decision · take responsibility · do your best</span></li>
+      <li onclick="toggleCheck(this)"><b>Sei ao menos 2 similes e 2 body idioms.</b><span class="sub">as white as a sheet · cost an arm and a leg</span></li>
+      <li onclick="toggleCheck(this)"><b>Sei estruturar resposta com P-E-E</b> (Point · Evidence · Expand).<span class="sub">Nenhuma resposta com menos de 3 frases</span></li>
+      <li onclick="toggleCheck(this)"><b>Sei variar vocabulário</b> — não uso "good/bad/big/nice" sem alternativa.<span class="sub">beneficial · detrimental · substantial · remarkable</span></li>
+    </ul>
+  </div>
+
+  <div class="box mind" style="margin-top:1.5rem">
+    <div class="box-title">🧠 Mantra para amanhã</div>
+    <p style="font-size:1.05rem;font-style:italic">"Falar de forma clara, coerente e variada é mais importante do que falar de forma perfeita. O examinador quer ver que você se comunica — não que você memorizou respostas."</p>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <strong>Cambridge FCE · B2 First · Speaking Masterclass</strong><br>
+  Baseado no material FCE das Units 1–3 · Complementado com conteúdo B2+ Speaking<br>
+  Boa prova amanhã. You've got this. 🎙️
+</footer>
+
+<script>
+/* ============================================================
+   TABS
+   ============================================================ */
+function switchTab(group, panelId) {
+  // Get all panels with IDs starting with group-
+  const allPanels = document.querySelectorAll(`[id^="${group}-"]`);
+  allPanels.forEach(p => p.classList.remove('active'));
+  
+  // Get all buttons in the same tabs-nav
+  const panel = document.getElementById(`${group}-${panelId}`);
+  if (!panel) return;
+  const container = panel.closest('.tabs-container');
+  const allBtns = container.querySelectorAll('.tab-btn');
+  allBtns.forEach(b => b.classList.remove('active'));
+  
+  // Activate
+  panel.classList.add('active');
+  
+  // Find and activate button
+  const btns = container.querySelectorAll('.tab-btn');
+  btns.forEach(btn => {
+    if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${panelId}'`)) {
+      btn.classList.add('active');
+    }
+  });
+}
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+function toggleAcc(trigger) {
+  const body = trigger.nextElementSibling;
+  const isOpen = trigger.classList.contains('open');
+  
+  if (isOpen) {
+    trigger.classList.remove('open');
+    body.style.maxHeight = '0';
+  } else {
+    trigger.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+/* ============================================================
+   TIMER
+   ============================================================ */
+const timers = {};
+
+function startTimer(id, seconds = 60) {
+  if (timers[id]) {
+    clearInterval(timers[id].interval);
+  }
+  
+  let remaining = seconds;
+  const el = document.getElementById(`timer${id}`);
+  const card = document.getElementById(`simQ${id}`);
+  
+  card.classList.add('active');
+  updateTimerDisplay(el, remaining);
+  
+  timers[id] = {
+    interval: setInterval(() => {
+      remaining--;
+      updateTimerDisplay(el, remaining);
+      
+      if (remaining <= 10) {
+        el.classList.add('urgent');
+      }
+      
+      if (remaining <= 0) {
+        clearInterval(timers[id].interval);
+        el.textContent = '⏹ Done!';
+        el.classList.remove('urgent');
+        el.style.color = '#4ade80';
+        card.classList.remove('active');
+      }
+    }, 1000)
+  };
+}
+
+function updateTimerDisplay(el, seconds) {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  el.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+function resetTimer(id, seconds = 60) {
+  if (timers[id]) {
+    clearInterval(timers[id].interval);
+    timers[id] = null;
+  }
+  const el = document.getElementById(`timer${id}`);
+  el.classList.remove('urgent');
+  el.style.color = '';
+  updateTimerDisplay(el, seconds);
+  document.getElementById(`simQ${id}`).classList.remove('active');
+}
+
+/* ============================================================
+   SHOW ANSWER + PROGRESS
+   ============================================================ */
+const answeredSet = new Set();
+
+function showAnswer(answerId) {
+  const el = document.getElementById(answerId);
+  el.classList.add('visible');
+  
+  // Track progress
+  const num = answerId.replace('a', '');
+  answeredSet.add(num);
+  updateProgress();
+}
+
+function updateProgress() {
+  const total = 8;
+  const done = answeredSet.size;
+  const pct = (done / total) * 100;
+  document.getElementById('simProgressBar').style.width = pct + '%';
+  document.getElementById('simProgressText').textContent = `${done} / ${total} perguntas respondidas`;
+}
+
+/* ============================================================
+   COPY PHRASE
+   ============================================================ */
+function copyPhrase(card) {
+  const text = card.querySelector('.eng').textContent.trim();
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).catch(() => {});
+  }
+  card.classList.add('copied');
+  const btn = card.querySelector('.copy-btn');
+  if (btn) btn.textContent = 'COPIADO!';
+  setTimeout(() => {
+    card.classList.remove('copied');
+    if (btn) btn.textContent = 'COPIAR';
+  }, 2000);
+}
+
+/* ============================================================
+   CHECKLIST
+   ============================================================ */
+function toggleCheck(li) {
+  li.classList.toggle('done');
+}
+
+/* ============================================================
+   SMOOTH NAV HIGHLIGHT
+   ============================================================ */
+const navLinks = document.querySelectorAll('.topnav a');
+const sections = document.querySelectorAll('section.main-sec');
+
+function onScroll() {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 80) {
+      current = sec.id;
+    }
+  });
+  navLinks.forEach(a => {
+    a.style.color = '';
+    if (a.getAttribute('href') === `#${current}`) {
+      a.style.color = '#fff';
+    }
+  });
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+
+/* ============================================================
+   INIT: open first accordion
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Timer for Part 4's second question is 20 sec — fix display
+  updateTimerDisplay(document.getElementById('timer4'), 20);
+});
+</script>
+</body>
+</html>
